@@ -1,0 +1,6 @@
+Back_end/node_modules/
+Front_end/node_modules/
+dist/
+build/
+config.bat
+node_modules
