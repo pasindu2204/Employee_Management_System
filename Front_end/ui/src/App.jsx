@@ -4,19 +4,32 @@ import viteLogo from '/vite.svg';
 import './App.css';
 import Navbar from './Components/Navbar.jsx';
 import Footer from './Components/Footer.jsx';
-import Employeelist from './Components/Employeelist.jsx';
+import EmployeeList from './Components/EmployeeList.jsx';
+import InsertEmployee from './Components/InsertEmployee.jsx';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import ShowEmployeeDetails from './Components/ShowEmployeeDetails.jsx';
+import UpdateDetails from './Components/UpdateDetails.jsx';
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-     <Navbar/>
-     <Employeelist/>
-     <h1>HELLO WORLD..!</h1>
-     <Footer/>
-    </>
+    <div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path = '/' element ={<EmployeeList/>} />
+        <Route path = '/insert' element ={<InsertEmployee/>} />
+        <Route path = '/showdetails/:id' element ={<ShowEmployeeDetails/>} />
+        <Route path = '/updatedetails/:id' element ={<UpdateDetails/>} />
+      </Routes>
+      <Footer/>
+     </Router>
+    </div>
   )
 }
 
 export default App
+
+
