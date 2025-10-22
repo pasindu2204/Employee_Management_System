@@ -58,18 +58,21 @@ function ShowEmployeeDetails() {
 
       <br />
       <div className="col-md-8 m-auto text-center">
-        <h1 className="display-6 fw-bold">Employee Detail</h1>
+        <h1 className="display-6 fw-bold">Employee Details</h1>
         <p>This is full details of the employee</p>
       </div>
 
-      <div className="col-md-10 m-auto text-center">
-        <Link
-          to={`/update/${employee._id}`}
-          className="btn btn-outline-info btn-lg"
-        >
-          Edit Employee
-        </Link>
+      <div className="col-md-10 m-auto">{TableItem}
       </div>
+
+      <div className="col-md-10 m-auto">
+  <Link
+    to={`/update/${employee._id}`}  // also fix route name
+    className="btn btn-outline-info btn-lg btn-block d-flex justify-content-center"
+  >
+    Edit Employee
+  </Link>
+</div>
     </div>
   );
 }

@@ -37,7 +37,7 @@ const onDelete = (id) => {
         </div>
         <div className='card_action'>
  <button className='delete' onClick={() => onDelete(employee._id)} >Delete</button>
- <Link className='btn btn-outline-warning float-left' to={`/showdetails/${employee._id}`}>Details</Link>
+ <Link className='btn btn-outline-warning float-right' to={`/show/${employee._id}`}>Details</Link>
         </div>
       </div>
     

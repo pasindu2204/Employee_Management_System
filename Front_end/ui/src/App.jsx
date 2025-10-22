@@ -18,11 +18,12 @@ function App() {
     <div>
     <Router>
       <Navbar />
+      
       <Routes>
         <Route path = '/' element ={<EmployeeList/>} />
         <Route path = '/insert' element ={<InsertEmployee/>} />
-        <Route path = '/showdetails/:id' element ={<ShowEmployeeDetails/>} />
-        <Route path = '/updatedetails/:id' element ={<UpdateDetails/>} />
+        <Route path = '/show/:id' element ={<ShowEmployeeDetails/>} />
+        <Route path = '/update/:id' element ={<UpdateDetails/>} />
       </Routes>
       <Footer/>
      </Router>
