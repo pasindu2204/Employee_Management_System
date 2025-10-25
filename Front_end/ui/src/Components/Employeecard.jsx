@@ -3,19 +3,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const EmployeeCard = ({employee}) => {
+const EmployeeCard = ({employee, onDelete }) => {
 
-const onDelete = (id) => {
-  axios.delete(`http://localhost:3000/api/employees/${id}`)
-     .then(() => {
-        console.log('Employee deleted successfully');
-        window.location.reload(); // temporary fix to refresh
-      })
-  .catch((err)=> {
-    console.log('Delete error:',err);
-  })
+const handleDelete = () => {
+  onDelete(employee._id);
 }
-
   return (
     
       <div className="card mb-3">
@@ -36,7 +28,7 @@ const onDelete = (id) => {
          
         </div>
         <div className='card_action'>
- <button className='delete' onClick={() => onDelete(employee._id)} >Delete</button>
+ <button className='delete' onClick={handleDelete} >Delete</button>
  <Link className='btn btn-outline-warning float-right' to={`/show/${employee._id}`}>Details</Link>
         </div>
       </div>

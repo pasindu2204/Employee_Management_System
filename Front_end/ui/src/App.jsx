@@ -17,8 +17,7 @@ function App() {
   return (
     <div>
     <Router>
-      <Navbar />
-      
+      <Navbar/>
       <Routes>
         <Route path = '/' element ={<EmployeeList/>} />
         <Route path = '/insert' element ={<InsertEmployee/>} />
